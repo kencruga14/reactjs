@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "./styles/styles.scss"
+
 
 const Curso = ({titulo, imagen, precio, profesor}) => (
-  <article classNameName="card">
+  <article className="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
       <img src={imagen} alt={titulo} />
     </div>
     <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-      <h3 className>{titulo}</h3>
+      <h3 className="center">{titulo}</h3>
       <div className="s-main-center">
         {`Profesor.: ${profesor}`}
       </div>
