@@ -1,5 +1,5 @@
 import React from 'react';
-import "./styles/styles.scss"
+import "../../styles/styles.scss"
 
 const Banner = () => (
     <div className="main-banner img-container l-section" id="main-banner">

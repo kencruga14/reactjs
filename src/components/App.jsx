@@ -1,11 +1,11 @@
 import React from 'react';
-import "./styles/styles.scss";
-import CourseGrid from './CourseGrid';
-import Banner from './Banner';
-import Formulario from './Formulario';
-import MenuPrincipal from './MenuPrincipal';
-import CourseReact from './CourseReact';
-import Historial from './Historial';
+import "../styles/styles.scss";
+import CourseGrid from './Organisms/CourseGrid';
+import Home from './Pages/Home';
+import Formulario from './Pages/Formulario';
+import MenuPrincipal from './Organisms/MenuPrincipal';
+import CourseReact from './Molecules/CourseReact';
+import Historial from './Pages/Historial';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
@@ -15,7 +15,7 @@ const App = () => (
   <Router>
     <MenuPrincipal />
     <Switch>
-      <Route path="/" exact component={Banner} />
+      <Route path="/" exact component={Home} />
       <Route path="/cursos/:id" component={CourseReact} />
       <Route path="/cursos" component={CourseGrid} />
       <Route path="/historial/:valor" component={Historial} />

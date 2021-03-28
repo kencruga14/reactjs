@@ -1,5 +1,6 @@
 import React from 'react';
-import Curso from './Curso';
+import Curso from '../Pages/Curso';
+import "../../styles/styles.scss"
 
 const cursos = [
     {
