@@ -6,6 +6,8 @@ import Formulario from './Pages/Formulario';
 import MenuPrincipal from './Organisms/MenuPrincipal';
 import CourseReact from './Molecules/CourseReact';
 import Historial from './Pages/Historial';
+import Users from './Pages/Users';
+
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
@@ -18,6 +20,7 @@ const App = () => (
       <Route path="/" exact component={Home} />
       <Route path="/cursos/:id" component={CourseReact} />
       <Route path="/cursos" component={CourseGrid} />
+      <Route path="/usuarios" component={Users} />
       <Route path="/historial/:valor" component={Historial} />
       <Route path="/historial" component={Historial} />
       <Route path="/formulario" component={() => <Formulario name="Página de Inicio" />} />
