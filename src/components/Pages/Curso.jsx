@@ -1,40 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import "../../styles/styles.scss";
-import {Link} from 'react-router-dom';
+const cursos = [
+    {
+        "id": 1,
+        "titulo": "Angular",
+        "imagen": "https://edteam-media.s3.amazonaws.com/courses/medium/461267d0-827f-4011-89ac-8403fe2eedb7.png",
+        "precio": "46 USD",
+        "profesor": "Doménica Armijos"
+    },
+    {
+        "id": 2,
+        "titulo": "Nodejs",
+        "imagen": "https://edteam-media.s3.amazonaws.com/courses/medium/3cc48fa0-8327-4561-aa04-dafc3b799909.png",
+        "precio": "32 USD",
+        "profesor": "Valeria Cruz"
+    },
+    {
+        "id": 3,
+        "titulo": "React",
+        "imagen": "https://ux.ed.team/img/curso-portada.png",
+        "precio": "40 USD",
+        "profesor": "Kenny Cruz"
+    }
+]
 
-
-const Curso = ({ id, titulo, imagen, precio, profesor }) => (
-  <article className="card">
-    <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-      <Link to={`/cursos/${id}`}>
-        <img src={imagen} alt={titulo} />
-      </Link>
-    </div>
-    <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-      <h3 className="center">{titulo}</h3>
-      <div className="s-main-center">
-        {`Profesor.: ${profesor}`}
-      </div>
-      <div className="s-main-center">
-        <a className="button--ghost-alert button--tiny" href="https://www.ubisoft.com/es-mx/game/rainbow-six/siege/game-info/operators/flores">{`$ ${precio}`} </a>
-      </div>
-    </div>
-  </article>
-)
-
-Curso.propTypes = {
-  titulo: PropTypes.string,
-  imagen: PropTypes.string,
-  precio: PropTypes.string,
-  profesor: PropTypes.string
-}
-
-Curso.defaultProps = {
-  titulo: "No se encontró titulo",
-  imagen: "No se encontró imagen",
-  precio: "No se encontró imagen",
-  profesor: "No se encontró Profesor",
-}
-
+const Curso = ({ match }) => {
+console.log("id", match.params.id)
+    const cursoElegido = cursos.filter(c => c.id === parseInt(match.params.id))[0]
+        return (
+            <div className="ed-grid m-grid-3">
+                <h1 className="m.cols-3">Curso: {cursoElegido.titulo}</h1>
+                <img className="m-cols-1" src={cursoElegido.imagen} alt="imagen" />
+                <p>Descripción</p>
+            </div>
+        )
+    }
+    
 export default Curso;

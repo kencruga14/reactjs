@@ -1,10 +1,10 @@
 import React from 'react';
 import "../styles/styles.scss";
-import CourseGrid from './Organisms/CourseGrid';
+import Cursos from './Pages/Cursos';
 import Home from './Pages/Home';
 import Formulario from './Pages/Formulario';
 import MenuPrincipal from './Organisms/MenuPrincipal';
-import CourseReact from './Molecules/CourseReact';
+import Curso from './Pages/Curso';
 import Historial from './Pages/Historial';
 import Users from './Pages/Users';
 
@@ -18,8 +18,8 @@ const App = () => (
     <MenuPrincipal />
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/cursos/:id" component={CourseReact} />
-      <Route path="/cursos" component={CourseGrid} />
+      <Route path="/cursos/:id" component={Curso} />
+      <Route path="/cursos" component={Cursos} />
       <Route path="/usuarios" component={Users} />
       <Route path="/historial/:valor" component={Historial} />
       <Route path="/historial" component={Historial} />
